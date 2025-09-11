@@ -3,9 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter</title>
+  <title>ToDo List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="content"></div>
+  <div id="todo-popup" class="popup">
+    <div class="popup-content">
+      <h4>Create New Todo</h4>
+      <label>
+        Title:
+        <input type="text" id="todo-title">
+      </label>
+      <label>
+        Description:
+        <textarea id="to-desc"></textarea>
+      </label>
+      <label>
+        Due Date:
+        <input type="date" id="todo-date">
+      </label>
+      <label>
+        Priority:
+        <select id="todo-priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+      </label>
+      <div class="popup-buttons">
+        <button id="todo-save">Save</button>
+        <button id="todo-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="user-info">
+        <h1 id="username">
+          Dan Murphy
+        </h1>
+      </div>
+      <div class="todeo-section">
+        <h2>
+          Create a New Todo
+          <button id="create-todo-btn" class="add-todo">+</button>
+        </h2>
+        <p class="today">today</p>
+      </div>
+      <div class="projects-section">
+        <h3>
+          Your Projects
+          <button id="create-project-btn" class="add-project">+</button>
+        </h3>
+        <ul id="projects-list"></ul>
+      </div>
+    </aside>
+  </div>
+  <div class="content" id="content"></div>
 </body>
 </html>
