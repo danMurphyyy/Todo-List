@@ -20,6 +20,10 @@ body {
   z-index: 1000;
 }
 
+.popup.active {
+  display: flex;
+}
+
 /* Popup content */
 .popup-content {
   background-color: white;
@@ -90,11 +94,11 @@ body {
 }
 
 /* Todo section */
-.todeo-section {
+.todo-section {
   margin-bottom: 2rem;
 }
 
-.todeo-section h2 {
+.todo-section h2 {
   margin: 0 0 0.5rem 0;
   font-size: 20px;
   display: flex;
@@ -116,7 +120,7 @@ body {
   line-height: 1;
 }
 
-.todeo-section .today {
+.todo-section .today {
   font-size: 20px;
   font-weight: 700;
 }
