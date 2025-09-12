@@ -1,15 +1,22 @@
 import Project from "./project";
 import TodoItem from "./todo-items";
 import Popup from "./popup";
+import UI from "./ui";
 import "./styles.css";
 
-const defaultProject = new Project("Default");
-
-const myTodo = new TodoItem("clean Room", "clean it all", "2025-09-15", "high-priority");
-
-defaultProject.addTodo(myTodo);
-
-console.log(defaultProject);
-
 const root = document.getElementById("content");
-root.innerHTML = "<p>Hello from Webpack Starter 🚀</p>";
+const ui = new UI(root);
+
+const unassignedProject = new Project("Default Project");
+
+const todoPopup = new Popup({
+  popupId: "todo-popup",
+  openBtnId: "create-todo-btn",
+  closeBtnId: "todo-cancel",
+  saveBtnId: "todo-save",
+  onSave: (data) => {
+    const todo = new TodoItem(data.title, data.description, data.dueDate, data.priority);
+    unassignedProject.addTodo(todo);
+    ui.renderTodo(todo);
+  },
+});
